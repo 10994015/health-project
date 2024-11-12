@@ -1,6 +1,10 @@
 <?php
 
+use App\Livewire\GameComponent;
+use App\Livewire\HomeComponent;
+use App\Livewire\InputComponent;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', HomeComponent::class)->name('home');
+Route::get('/7f15fa95/{type}/{signedurl}', GameComponent::class)->name('game');
+Route::get('/3e8r5esa/{type}/{signedurl}', InputComponent::class)->name('input');
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });
