@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('game_records', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('student_id')->unique();
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('username')->unique()->after('email');
         });
     }
 
@@ -24,6 +21,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('game_records');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('username');
+        });
     }
 };

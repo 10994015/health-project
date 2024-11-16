@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('givebacks', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('game_record_id');
-            $table->foreign('game_record_id')->references('id')->on('game_records')->onDelete('cascade');
+            $table->string('student_id');
+            $table->foreignId('game_record_id')->nullable()->constrained();
+            $table->integer('type');
             $table->boolean('question_1');
             $table->boolean('question_2');
             $table->boolean('question_3');
@@ -22,9 +23,12 @@ return new class extends Migration
             $table->boolean('question_5');
             $table->boolean('question_6');
             $table->boolean('question_7');
-            $table->text('comment');
+            $table->text('comment')->nullable();
             $table->integer('score');
+            $table->integer('game_seconds')->comment('玩遊戲花費時間');
             $table->timestamps();
+
+            $table->index('student_id');
         });
     }
 

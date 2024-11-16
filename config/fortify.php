@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'username' => 'email',
+    'username' => 'username',
 
     'email' => 'email',
 
@@ -73,7 +73,7 @@ return [
     |
     */
 
-    'home' => '/dashboard',
+    'home' => '/1HdZYqhmAeUMnUGQzSvBaVneTx8ajlNc6URspWrXmIqNmFyYcD/lottery',
 
     /*
     |--------------------------------------------------------------------------
@@ -144,8 +144,8 @@ return [
     */
 
     'features' => [
-        Features::registration(),
-        Features::resetPasswords(),
+        // Features::registration(),
+        // Features::resetPasswords(),
         // Features::emailVerification(),
         Features::updateProfileInformation(),
         Features::updatePasswords(),

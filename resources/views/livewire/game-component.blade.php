@@ -7,7 +7,7 @@
 
     <div class="main">
         <div id="hiddenLayer">
-           <h1 id="touchH1">輕觸螢幕開始遊戲</h1>
+           <h1 id="touchH1" wire:click='startCalcTimer()'>輕觸螢幕開始遊戲</h1>
         </div>
         <img src="{{ asset('images/head.png') }}" class="head">
         <p class="hp">HP</p>
