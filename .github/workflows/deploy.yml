@@ -1,0 +1,42 @@
+name: Deployment to AWS EC2
+on:
+  push:
+    branches: [main, dev]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get code
+        uses: actions/checkout@v4
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@master
+        env:
+          COMPOSER_ALLOW_SUPERUSER: 1
+          NODE_ENV: production
+          GIT_USERNAME: ${{ secrets.GIT_USERNAME }}
+          GIT_TOKEN: ${{ secrets.GIT_TOKEN }}
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          envs: COMPOSER_ALLOW_SUPERUSER,NODE_ENV,GIT_USERNAME,GIT_TOKEN
+          script: |
+            set -ex
+            cd /var/www/html/oddly-api
+            sudo chown -R $USER:$USER .
+            sudo chmod -R 775 storage bootstrap/cache
+
+            sudo git fetch https://${{ env.GIT_USERNAME }}:${{ env.GIT_TOKEN }}@github.com/${{ env.GIT_USERNAME }}/oddly-api main
+            sudo git reset --hard FETCH_HEAD
+
+            sudo chown -R www-data:www-data .
+            sudo chmod -R 775 storage bootstrap/cache
+
+            sudo -u www-data composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader
+            sudo -u www-data php artisan migrate --force
+            sudo npm run build
+            sudo php artisan config:cache
+            sudo php artisan route:cache
+            sudo php artisan view:cache

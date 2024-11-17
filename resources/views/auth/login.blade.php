@@ -3,7 +3,7 @@
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
             <!-- Logo -->
             <div class="flex justify-center">
-                <img src="{{ asset('images/logo.png') }}" alt="Logo" class="h-16">
+                <img src="{{ asset('images/LOGO.png') }}" class="h-16">
             </div>
             <!-- 標題 -->
             <h2 class="mt-6 text-3xl font-bold tracking-tight text-center text-gray-900">

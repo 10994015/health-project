@@ -117,7 +117,7 @@ class DashboardComponent extends Component
 
         $this->mostPopularTime = $mostPopularTime;
         $this->leastPopularTime = $leastPopularTime;
-        $this->averagePerTime = ceil($totalCount / ($this->finished));
+        $this->averagePerTime = $this->finished==0 ? 0 : ceil($totalCount / ($this->finished));
 
         // 每日資料數量數據
         $dailys = Giveback::selectRaw('DATE(created_at) as date, COUNT(*) as count')

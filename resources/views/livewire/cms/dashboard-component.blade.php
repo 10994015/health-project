@@ -364,7 +364,7 @@
                     </div>
                     <div class="ml-4">
                         <h3 class="text-lg font-medium text-gray-900">最長遊戲時間</h3>
-                        <p class="mt-2 text-3xl font-semibold text-gray-700">{{ $maxGameTimes }}秒</p>
+                        <p class="mt-2 text-3xl font-semibold text-gray-700">{{ $maxGameTimes ?? 0 }}秒</p>
                     </div>
                 </div>
             </div>
@@ -379,7 +379,7 @@
                     </div>
                     <div class="ml-4">
                         <h3 class="text-lg font-medium text-gray-900">最短遊戲時間</h3>
-                        <p class="mt-2 text-3xl font-semibold text-gray-700">{{ $minGameTimes }}秒</p>
+                        <p class="mt-2 text-3xl font-semibold text-gray-700">{{ $minGameTimes ?? 0 }}秒</p>
                     </div>
                 </div>
             </div>
