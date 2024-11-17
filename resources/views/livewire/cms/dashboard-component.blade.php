@@ -510,7 +510,7 @@
             <!-- 每日資料數量 -->
             <div class="p-6 bg-white rounded-lg shadow-sm">
                 <div class="flex items-center justify-between mb-4">
-                    <h3 class="text-lg font-medium text-gray-900">每日資料數量</h3>
+                    <h3 class="text-lg font-medium text-gray-900">健康體育周資料數量</h3>
                     <div class="flex items-center space-x-2">
                         <span class="text-sm text-gray-500">2024 12/2 - 12/6</span>
                         <button class="p-1 text-gray-400 hover:text-gray-600">

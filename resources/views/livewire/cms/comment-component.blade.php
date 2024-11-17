@@ -48,7 +48,7 @@
                                     </div>
                                 </th>
                                 <td class="px-4 py-3 text-sm text-gray-800 whitespace-nowrap">
-                                    {{ $comments->question_1 }}
+                                    {{ number_format($comments->question_1) ?? 0 }}
                                 </td>
                             </tr>
                             <tr class="hover:bg-gray-50">
@@ -59,7 +59,7 @@
                                     </div>
                                 </th>
                                 <td class="px-4 py-3 text-sm text-gray-800 whitespace-nowrap">
-                                    {{ $comments->question_2 }}
+                                    {{ number_format($comments->question_2) ?? 0 }}
                                 </td>
                             </tr>
                             <tr class="hover:bg-gray-50">
@@ -70,7 +70,7 @@
                                     </div>
                                 </th>
                                 <td class="px-4 py-3 text-sm text-gray-800 whitespace-nowrap">
-                                    {{ $comments->question_3 }}
+                                    {{ number_format($comments->question_3) ?? 0 }}
                                 </td>
                             </tr>
                             <tr class="hover:bg-gray-50">
@@ -81,7 +81,7 @@
                                     </div>
                                 </th>
                                 <td class="px-4 py-3 text-sm text-gray-800 whitespace-nowrap">
-                                    {{ $comments->question_4 }}
+                                    {{ number_format($comments->question_4) ?? 0 }}
                                 </td>
                             </tr>
                             <tr class="hover:bg-gray-50">
@@ -92,7 +92,7 @@
                                     </div>
                                 </th>
                                 <td class="px-4 py-3 text-sm text-gray-800 whitespace-nowrap">
-                                    {{ $comments->question_5 }}
+                                    {{ number_format($comments->question_5) ?? 0 }}
                                 </td>
                             </tr>
                             <tr class="hover:bg-gray-50">
@@ -103,7 +103,7 @@
                                     </div>
                                 </th>
                                 <td class="px-4 py-3 text-sm text-gray-800 whitespace-nowrap">
-                                    {{ $comments->question_6 }}
+                                    {{ number_format($comments->question_6) ?? 0 }}
                                 </td>
                             </tr>
                             <tr class="hover:bg-gray-50">
@@ -114,7 +114,7 @@
                                     </div>
                                 </th>
                                 <td class="px-4 py-3 text-sm text-gray-800 whitespace-nowrap">
-                                    {{ $comments->question_7 }}
+                                    {{ number_format($comments->question_7) ?? 0 }}
                                 </td>
                             </tr>
                         </tbody>

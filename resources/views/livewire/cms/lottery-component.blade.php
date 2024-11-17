@@ -48,7 +48,7 @@
     getStudentInfo(student_id){
         console.log(this.students);
         const student =  this.students.find(student => student.student_id === student_id);
-        return `${student.student_id} - ${student.name} - ${student.created_at}`;
+        return `${student.student_id} - ${student.name} `;
     },
     reset(){
         this.selected = [];
