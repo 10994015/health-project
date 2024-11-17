@@ -23,9 +23,9 @@ use Illuminate\Support\Facades\URL;
 */
 
 Route::get('/', HomeComponent::class)->name('home');
-Route::get('/7f15fa95/{signedurl}', GameComponent::class)->name('game');
-Route::get('/3e8r5esa/{type}/{signedurl}', InputComponent::class)->name('input');
-Route::get('/8t9hf3d4', FinishComponent::class)->name('finish');
+Route::get('/3kjF66lVgrnQOZCoVY3nGdkBVm9cPKOIhaFw54FmLSxYwSITYn /{signedurl}', GameComponent::class)->name('game');
+Route::get('/9omZdHj08tgwIOea1jHmosFIBG9SaNtKIMFe39DbaO957iqizx/{type}/{signedurl}', InputComponent::class)->name('input');
+Route::get('/HlzqfWCyRvgd35aD6T0ZiUZFATGgPEkEOteClUSi183G4vXnLo', FinishComponent::class)->name('finish');
 
 
 Route::middleware([
