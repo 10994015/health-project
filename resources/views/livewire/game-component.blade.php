@@ -1,4 +1,4 @@
-<div class="game-component">
+<div class="game-component" wire:ignore>
 
     <div class="randomBtn" id="randomBtn1">
         <a href="javascript:;" class="clickBtn" id="clickBtn"> <img src="{{ asset('images/click.png')  }}"></a>
@@ -7,7 +7,7 @@
 
     <div class="main">
         <div id="hiddenLayer">
-           <h1 id="touchH1" wire:click='startCalcTimer()'>輕觸螢幕開始遊戲</h1>
+           <h1 id="touchH1" wire:click='startCalcTimer()'>輕觸螢幕開始遊戲{{ $type }}</h1>
         </div>
         <img src="{{ asset('images/head.png') }}" class="head">
         <p class="hp">HP</p>
@@ -18,20 +18,20 @@
             </div>
             <div id="progressBarNum">100/100</div>
             <img src="{{ asset('images/boss.png') }}" alt="" id="squid">
-            <img src="{{ asset('images/arms4.png') }}" id="arms">
-            <img src="{{ asset('images/playerA1.png') }}" alt="" id="player">
+            <img src="{{ asset('images/arms'.$type.'.png') }}" id="arms">
+            <img src="{{ asset('images/player'.$typeToEinglish[$type].'1.png') }}" id="player">
             <p id="addscore">-4%</p>
     </div>
 
     <div class="qaAll">
             <h1 class="error">答錯了!再答一次!<br><i class="fas fa-times-circle"></i></h1>
             <div class="qa">
-                    <p>(1).<span id="question1"></span></p>
-                    <label for="q1-a"><input type="radio" name="q1" id="q1-a" class="option1"><span id="q1a"></span></label>
-                    <label for="q1-b"><input type="radio" name="q1" id="q1-b" class="option1"><span id="q1b"></span></label>
-                    <label for="q1-c"><input type="radio" name="q1" id="q1-c" class="option1"><span id="q1c"></span></label>
-                    <!-- <strong id="hint1"></strong> -->
-                    <button class="send">送出</button>
+                <p>(1).<span id="question1"></span></p>
+                <label for="q1-a"><input type="radio" name="q1" id="q1-a" class="option1"><span id="q1a"></span></label>
+                <label for="q1-b"><input type="radio" name="q1" id="q1-b" class="option1"><span id="q1b"></span></label>
+                <label for="q1-c"><input type="radio" name="q1" id="q1-c" class="option1"><span id="q1c"></span></label>
+                <!-- <strong id="hint1"></strong> -->
+                <button class="send">送出</button>
             </div>
     </div>
 
@@ -140,8 +140,8 @@
     </div>
 
     @push('scripts')
-    <script src="{{ asset('js/script' .$type .'.js') }}"></script>
     <script src="{{ asset('js/quest' .$type .'.js') }}"></script>
+    <script src="{{ asset('js/script' .$type .'.js') }}"></script>
     @endpush
 
 </div>

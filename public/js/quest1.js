@@ -443,9 +443,8 @@ send[0].addEventListener("click",()=>{
 
         },10)
     }
-    
-})
 
+})
 
 
 
@@ -471,7 +470,7 @@ send[1].addEventListener("click",()=>{
 
         },10)
     }
-    
+
 })
 
 
@@ -495,7 +494,7 @@ send[2].addEventListener("click",()=>{
 
         },10)
     }
-    
+
 })
 
 
@@ -520,7 +519,7 @@ send[3].addEventListener("click",()=>{
 
         },10)
     }
-    
+
 })
 question5.innerHTML = test2[num5].q;
 q5a.innerHTML = test2[num5].Options_A;
@@ -543,7 +542,7 @@ send[4].addEventListener("click",()=>{
 
         },10)
     }
-    
+
 })
 
 question6.innerHTML = test3[num6].q;
@@ -560,7 +559,7 @@ send[5].addEventListener("click",()=>{
             bingo[5].style.opacity ="1";
 
         },10)
-        
+
     }else{
         error[5].style.display="block";
         setTimeout(()=>{
@@ -568,7 +567,7 @@ send[5].addEventListener("click",()=>{
 
         },10)
     }
-    
+
 })
 
 

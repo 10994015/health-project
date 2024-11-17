@@ -34,7 +34,7 @@ class InputComponent extends Component
         $this->type = $request->type;
         Log::info($signedurl);
         if (!$signedurl) {
-            abort(403, '這個連結已經過期或無效，請在玩一次遊戲。');
+            abort(419, '這個連結已經過期或無效，請在玩一次遊戲。');
         }
     }
     public function submit()

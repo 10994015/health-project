@@ -2,6 +2,7 @@
 namespace App\Exports;
 
 use App\Models\GameRecord;
+use App\Models\Giveback;
 use Maatwebsite\Excel\Concerns\FromQuery;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 use Maatwebsite\Excel\Concerns\WithMapping;
@@ -10,21 +11,23 @@ class StudentsExport implements FromQuery, WithHeadings, WithMapping
 {
     public function query()
     {
-        return GameRecord::leftJoin('givebacks', 'game_records.student_id', '=', 'givebacks.student_id')
-            ->select(
-                'game_records.student_id',
-                'game_records.name',
-                'givebacks.score',
-                'givebacks.comment',
-                'givebacks.created_at',
-                'givebacks.question_1',
-                'givebacks.question_2',
-                'givebacks.question_3',
-                'givebacks.question_4',
-                'givebacks.question_5',
-                'givebacks.question_6',
-                'givebacks.question_7'
-            );
+        return Giveback::with('game_record')
+            ->select('id', 'game_record_id', 'score', 'comment', 'question_1', 'question_2', 'question_3', 'question_4', 'question_5', 'question_6', 'question_7', 'created_at', 'student_id');
+        // return GameRecord::leftJoin('givebacks', 'game_records.id', '=', 'givebacks.game_record_id')
+        //     ->select(
+        //         'game_records.student_id',
+        //         'game_records.name',
+        //         'givebacks.score',
+        //         'givebacks.comment',
+        //         'givebacks.created_at',
+        //         'givebacks.question_1',
+        //         'givebacks.question_2',
+        //         'givebacks.question_3',
+        //         'givebacks.question_4',
+        //         'givebacks.question_5',
+        //         'givebacks.question_6',
+        //         'givebacks.question_7'
+        //     );
     }
 
     public function headings(): array
@@ -60,7 +63,7 @@ class StudentsExport implements FromQuery, WithHeadings, WithMapping
 
         return [
             $row->student_id,
-            $row->name,
+            $row->game_record->name,
             $row->score,
             $row->comment,
             $row->created_at,

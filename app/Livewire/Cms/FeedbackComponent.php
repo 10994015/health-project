@@ -10,6 +10,7 @@ use Livewire\WithPagination;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\StudentsExport;
 use App\Models\Giveback;
+use Livewire\Attributes\On;
 
 class FeedbackComponent extends Component
 {
@@ -26,9 +27,12 @@ class FeedbackComponent extends Component
         'question6' => '我願意將今日所學的健康知識傳遞給身邊的同學與親友。',
         'question7' => '我會想主動學習更多相關健康知識。',
     ];
+    #[On('export')]
     public function export()
     {
-        return Excel::download(new StudentsExport, '使用者回饋.xlsx');
+        $export = Excel::download(new StudentsExport, '使用者回饋.xlsx');
+        $this->dispatch('export-success');
+        return $export;
     }
     #[Layout('livewire.layouts.cms')]
     public function render()
@@ -48,7 +52,8 @@ class FeedbackComponent extends Component
                     ->orWhere('comment', 'like', '%'.$this->search.'%');
             })
             ->orWhereHas('game_record', function($query){
-                $query->where('name', 'like', '%'.$this->search.'%');
+                $query->where('name', 'like', '%'.$this->search.'%')
+                    ->orWhere('student_id', 'like', '%'.$this->search.'%');
             });
         }
         $query->select('id', 'game_record_id', 'student_id',  'score', 'comment', 'question_1', 'question_2', 'question_3', 'question_4', 'question_5', 'question_6', 'question_7');

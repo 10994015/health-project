@@ -15,7 +15,7 @@ class HomeComponent extends Component
     public function gotoGame(){
         $signedurl = str()->random(30);
         Redis::setex('game_signed_url:' . $signedurl, 300, $signedurl);
-        return redirect()->route('game', ['type' => $this->type, 'signedurl' => $signedurl]);
+        return redirect()->route('game', ['signedurl' => $signedurl]);
     }
     #[Layout('livewire.layouts.app')]
     public function render()

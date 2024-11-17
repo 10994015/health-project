@@ -5,6 +5,7 @@ namespace App\Livewire\Cms;
 use App\Exports\CommentsExport;
 use Illuminate\Support\Facades\DB;
 use Livewire\Attributes\Layout;
+use Livewire\Attributes\On;
 use Livewire\Component;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -22,9 +23,12 @@ class CommentComponent extends Component
                         sum(case when question_7 = 1 then 1 else 0 end) as question_7'))
         ->first();
     }
+    #[On('export')]
     public function export()
     {
-        return Excel::download(new CommentsExport, 'comments.xlsx');
+        $export = Excel::download(new CommentsExport, '使用者回饋.xlsx');
+        $this->dispatch('export-success');
+        return $export;
     }
     #[Layout('livewire.layouts.cms')]
     public function render()

@@ -8,11 +8,10 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+
 
         <!-- Scripts -->
-        @vite(['resources/css/style.scss', 'resources/js/app.js'])
+        @vite(['resources/css/style.scss'])
 
         <!-- Styles -->
         @livewireStyles
@@ -23,9 +22,8 @@
                 {{ $slot }}
             </main>
         </div>
-
-        @livewireScripts
         @stack('scripts')
+        @livewireScripts
     </body>
     <style>
         .main{

@@ -1,4 +1,10 @@
-<div class="feedback-component">
+<div class="feedback-component" x-data="{
+    exportLoading: false,
+    exportExcel(){
+        this.exportLoading = true;
+        Livewire.dispatch('export');
+    }
+}" x-on:export-success.window="exportLoading = false">
     <div class="px-4 py-8 mx-auto max-w-7xl">
         <div class="p-6 bg-white rounded-lg shadow-lg">
             <div class="mb-8 text-center">
@@ -46,14 +52,21 @@
                             <option value="200">顯示200筆</option>
                             <option value="300">顯示300筆</option>
                         </select>
-                        <button wire:click="export" class="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
-                            <span class="flex items-center space-x-2">
+                        <button  @click="exportExcel" :disabled="exportLoading" :class="[exportLoading ? 'cursor-not-allowed' : '' ,'px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-md hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500']">
+                            <span x-show="!exportLoading" class="flex items-center space-x-2">
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
                                 </svg>
                                 <span>匯出Excel</span>
                             </span>
-                        </button>
+                            <span x-show="exportLoading" class="flex items-center space-x-2">
+                                <svg class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                                <span>處理中...</span>
+                            </span>
+                         </button>
                     </div>
                 </div>
 
@@ -87,7 +100,7 @@
                         </thead>
 
                         @if($students->count() === 0)
-                            <tbody class="bg-white divide-y divide-gray-200" wire:loading.remove >
+                            <tbody class="bg-white divide-y divide-gray-200" wire:loading.remove wire:target="search, score, limit" >
                                 <tr class="transition-colors duration-200 hover:bg-gray-50" >
                                     <th  colspan=7 class="w-full px-6 py-20 text-sm text-gray-900 whitespace-nowrap" >
                                         <div class="flex items-center justify-center min-w-full"  >
@@ -99,7 +112,7 @@
                                 </tr>
                             </tbody>
                         @endif
-                        <tbody class="bg-white divide-y divide-gray-200" wire:loading.remove>
+                        <tbody class="bg-white divide-y divide-gray-200" wire:loading.remove wire:target="search, score, limit">
                             @foreach($students as $student)
                                 <tr class="transition-colors duration-200 hover:bg-gray-50">
                                     <td class="px-6 py-4 text-sm text-gray-900 whitespace-nowrap">
@@ -165,7 +178,7 @@
                         <tbody>
                             <tr class="transition-colors duration-200 hover:bg-gray-50">
                                 <td colspan="7" class="w-full min-w-full"  >
-                                    <div class="flex items-center justify-center min-w-full py-20" wire:loading   >
+                                    <div class="flex items-center justify-center min-w-full py-20" wire:loading  wire:target="search, score, limit" >
                                         <div class="flex flex-col items-center w-full p-4 space-y-3">
                                             <div class="w-8 h-8 border-4 border-blue-200 rounded-full border-t-blue-500 animate-spin"></div>
                                             <span class="text-sm font-medium text-gray-600">載入中...</span>
