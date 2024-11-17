@@ -8,7 +8,19 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <!-- Fonts -->
+        <script>
+            console.log(`%c
+            ⚠️ 警告！
+            ------------------
+            如果有人告訴你在這裡複製/貼上任何東西，
+            有 99.9% 的機率是在詐騙！
 
+            除非你確切知道你在做什麼，
+            否則請立即關閉這個視窗！
+
+            `, 'color: red; font-size: 16px; font-weight: bold; text-shadow: 1px 1px 0 #000; background: #ffebee; padding: 10px; border-radius: 5px;');
+
+        </script>
 
         <!-- Scripts -->
         @vite(['resources/css/style.scss'])
@@ -30,4 +42,5 @@
             background: url({{ asset('images/bg.jpg') }}) no-repeat;
         }
     </style>
+
 </html>

@@ -347,12 +347,7 @@ while(num4 === num5){
     num5 = Math.floor(Math.random()*10);
 }
 var num6 = Math.floor(Math.random()*10);
-console.log("num1", num1);
-console.log("num2", num2);
-console.log("num3", num3);
-console.log("num4", num4);
-console.log("num5", num5);
-console.log("num6", num6);
+
 var pass = document.getElementById("pass");
 var question1 = document.getElementById('question1');
 var q1a = document.getElementById('q1a');
@@ -445,7 +440,7 @@ send[0].addEventListener("click",()=>{
 
         },10)
     }
-    
+
 })
 
 
@@ -473,7 +468,7 @@ send[1].addEventListener("click",()=>{
 
         },10)
     }
-    
+
 })
 
 
@@ -497,7 +492,7 @@ send[2].addEventListener("click",()=>{
 
         },10)
     }
-    
+
 })
 
 
@@ -522,7 +517,7 @@ send[3].addEventListener("click",()=>{
 
         },10)
     }
-    
+
 })
 question5.innerHTML = test2[num5].q;
 q5a.innerHTML = test2[num5].Options_A;
@@ -545,7 +540,7 @@ send[4].addEventListener("click",()=>{
 
         },10)
     }
-    
+
 })
 
 question6.innerHTML = test3[num6].q;
@@ -562,7 +557,7 @@ send[5].addEventListener("click",()=>{
             bingo[5].style.opacity ="1";
 
         },10)
-        
+
     }else{
         error[5].style.display="block";
         setTimeout(()=>{
@@ -570,7 +565,7 @@ send[5].addEventListener("click",()=>{
 
         },10)
     }
-    
+
 })
 
 

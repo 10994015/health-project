@@ -344,12 +344,6 @@ while(num4 === num5){
     num5 = Math.floor(Math.random()*10);
 }
 var num6 = Math.floor(Math.random()*10);
-console.log("num1", num1);
-console.log("num2", num2);
-console.log("num3", num3);
-console.log("num4", num4);
-console.log("num5", num5);
-console.log("num6", num6);
 
 var pass = document.getElementById("pass");
 var question1 = document.getElementById('question1');
