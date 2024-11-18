@@ -45,7 +45,7 @@
 
     <style>
         .form{
-            background: url({{ asset('images/bg.jpg') }}) no-repeat;
+            background: url({{ asset('images/bg.webp') }}) no-repeat;
         }
     </style>
 </div>
