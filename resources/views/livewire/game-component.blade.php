@@ -1,7 +1,7 @@
 <div class="game-component" wire:ignore>
 
     <div class="randomBtn" id="randomBtn1">
-        <a href="javascript:;" class="clickBtn" id="clickBtn"> <img src="{{ asset('images/click.png')  }}"></a>
+        <a href="javascript:;" class="clickBtn" id="clickBtn"> <img src="{{ asset('images/click.webp')  }}"></a>
     </div>
     <div class="all">
 
@@ -9,7 +9,7 @@
         <div id="hiddenLayer">
            <h1 id="touchH1" wire:click='startCalcTimer()'>輕觸螢幕開始遊戲</h1>
         </div>
-        <img src="{{ asset('images/head.png') }}" class="head">
+        <img src="{{ asset('images/head.webp') }}" class="head">
         <p class="hp">HP</p>
             <div class="progressBar" id="progressBar">
 
@@ -17,9 +17,9 @@
 
             </div>
             <div id="progressBarNum">100/100</div>
-            <img src="{{ asset('images/boss.png') }}" alt="" id="squid">
-            <img src="{{ asset('images/arms'.$type.'.png') }}" id="arms">
-            <img src="{{ asset('images/player'.$typeToEinglish[$type].'1.png') }}" id="player">
+            <img src="{{ asset('images/boss.webp') }}" alt="" id="squid">
+            <img src="{{ asset('images/arms'.$type.'.webp') }}" id="arms">
+            <img src="{{ asset('images/player'.$typeToEinglish[$type].'1.webp') }}" id="player">
             <p id="addscore">-4%</p>
     </div>
 
@@ -129,7 +129,7 @@
     <div id="pass">
         <h1>闖關成功</h1>
         <h1 id="second">0</h1>
-        <!-- <img src="images/LOGO.png"> -->
+        <!-- <img src="images/LOGO.webp"> -->
         <p>本活動為衛生保健組宣導各式健康促進議題</p>
         <p>結合時事以平易近人、生活化方式作為傳遞</p>
         <p>感謝您的參加</p>

@@ -28,9 +28,9 @@ html = '';
 times = 0;
 src=1;
 pos = 0;
-squid.src="/images/boss.png";
-player.src="/images/playerB1.png";
-arms.src = "/images/arms2.png";
+squid.src="/images/boss.webp";
+player.src="/images/playerB1.webp";
+arms.src = "/images/arms2.webp";
 
 touchH1.addEventListener("click",run);
 
@@ -52,10 +52,10 @@ for(var a=0;a<clickBtn.length;a++){
 
 function disappear(){
     arms.style.display = "block";
-    player.src="/images/playerB2.png";
+    player.src="/images/playerB2.webp";
     player.style.width = "120px";
     setTimeout(()=>{
-        squid.src="/images/boss2.png";
+        squid.src="/images/boss2.webp";
         addscore.style.opacity="1";
         addscore.style.transition=".3s";
         addscore.style.top="10px";
@@ -63,11 +63,11 @@ function disappear(){
 
     setTimeout(()=>{
         arms.style.display = "none"
-        player.src="/images/playerB1.png";
+        player.src="/images/playerB1.webp";
         player.style.width = "120px";
     },500)
     setTimeout(()=>{
-        squid.src="/images/boss.png";
+        squid.src="/images/boss.webp";
     },600)
 
     times+=1;
@@ -105,7 +105,7 @@ function run(){
     //     if(src>3){
     //         src=1;
     //     }
-    //     player.src="./images/player"+src+".png";
+    //     player.src="./images/player"+src+".webp";
 
     //     start();
     // }, 400);

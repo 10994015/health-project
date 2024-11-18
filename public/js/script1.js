@@ -28,9 +28,9 @@ html = '';
 times = 0;
 src=1;
 pos = 0;
-squid.src="/images/boss.png";
-player.src="/images/playerA1.png";
-arms.src = "/images/arms1.png";
+squid.src="/images/boss.webp";
+player.src="/images/playerA1.webp";
+arms.src = "/images/arms1.webp";
 touchH1.addEventListener("click",run);
 
 touchH1.addEventListener("click",()=>{
@@ -51,10 +51,10 @@ for(var a=0;a<clickBtn.length;a++){
 
 function disappear(){
     arms.style.display = "block";
-    player.src="/images/playerA2.png";
+    player.src="/images/playerA2.webp";
     player.style.width = "90px";
     setTimeout(()=>{
-        squid.src="/images/boss2.png";
+        squid.src="/images/boss2.webp";
         addscore.style.opacity="1";
         addscore.style.transition=".3s";
         addscore.style.top="10px";
@@ -62,11 +62,11 @@ function disappear(){
 
     setTimeout(()=>{
         arms.style.display = "none"
-        player.src="/images/playerA1.png";
+        player.src="/images/playerA1.webp";
         player.style.width = "120px";
     },500)
     setTimeout(()=>{
-        squid.src="/images/boss.png";
+        squid.src="/images/boss.webp";
     },600)
 
     times+=1;
