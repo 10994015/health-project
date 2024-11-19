@@ -1,4 +1,16 @@
-<div class="input-component">
+<div class="input-component" x-data="{
+    errorAlert(e){
+        alert(e[0].message);
+    },
+    errorCommitedAlert(e){
+        console.log(e);
+        alert(e[0].message);
+        window.location.href = '/';
+    }
+}"
+x-on:error-alert.window="errorAlert($event.detail)"
+x-on:error-alert-commited.window="errorCommitedAlert($event.detail)"
+>
     <div class="form">
         <form wire:submit.prevent='submit'>
             <input type="number" wire:model.live='student_id' placeholder="請輸入學號" name="student"  id="student" required>
