@@ -8,14 +8,16 @@
     @vite(['resources/css/404.scss'])
 </head>
 <body>
-    <div class="noise"></div>
-<div class="overlay"></div>
-<div class="terminal">
-  <h1>Not Found <span class="errorcode">404</span></h1>
-  <p class="output">找不到此頁面。</p>
-  <p class="output">您正在尋找的頁面不存在。</p>
-  <p class="output">請嘗試 <a href="{{ route('home') }}">回到首頁</a>重新進入畫面。</p>
-</div>
+    <div class="site">
+        <div class="sketch">
+            <div class="bee-sketch red"></div>
+            <div class="bee-sketch blue"></div>
+        </div>
 
+    <h1>404:
+        <small>Not Found</small>
+        <a href="{{ route('home') }}">Back to Home</a>
+    </h1>
+    </div>
 </body>
 </html>

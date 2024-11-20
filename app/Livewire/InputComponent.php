@@ -36,19 +36,19 @@ class InputComponent extends Component
         $this->type = $request->type;
         Log::info($signedurl);
         if (!$signedurl) {
-            // abort(419, '這個連結已經過期或無效，請在玩一次遊戲。');
+            abort(419, '這個連結已經過期或無效，請在玩一次遊戲。');
         }
     }
     public function submit()
     {
-        if(strlen($this->student_id) < 8){
-            $this->dispatch('error-alert', ['message'=>'學號必須是8位數。']);
+        if (strlen($this->student_id) < 8) {
+            $this->dispatch('error-alert', ['message' => '學號必須是8位數。']);
         }
         $this->validate([
             'student_id' => 'required|size:8',
             'name' => 'required',
             'score' => 'required|numeric',
-        ],[
+        ], [
             'student_id.required' => '學號為必填的。',
             'student_id.size' => '學號必須是8位數。',
             'name.required' => '姓名是必填的。',
@@ -56,9 +56,9 @@ class InputComponent extends Component
             'score.numeric' => '分數必須是數字。',
         ]);
         DB::beginTransaction();
-        try{
+        try {
             if (Giveback::where('signed_url', $this->signedurl)->lockForUpdate()->exists()) {
-                $this->dispatch('error-alert-commited', ['message'=>'該局已經提交過，若要重複提交，請返回首頁並重新開始遊戲。']);
+                $this->dispatch('error-alert-commited', ['message' => '該局已經提交過，若要重複提交，請返回首頁並重新開始遊戲。']);
                 DB::rollBack();
                 return;
             }
@@ -93,7 +93,7 @@ class InputComponent extends Component
             $giveback->save();
 
             DB::commit();
-        }catch(\Exception $e){
+        } catch (\Exception $e) {
             DB::rollBack();
             Log::error($e);
             return;
