@@ -40,3 +40,6 @@ Route::middleware([
         Route::get('/comment', CommentComponent::class)->name('comment');
     });
 });
+
+
+URL::forceScheme('https');
