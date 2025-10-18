@@ -10,6 +10,7 @@ use Livewire\WithPagination;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\StudentsExport;
 use App\Models\Giveback;
+use Elastic\Elasticsearch\ClientBuilder;
 use Livewire\Attributes\On;
 
 class FeedbackComponent extends Component
@@ -27,6 +28,9 @@ class FeedbackComponent extends Component
         'question6' => '我願意將今日所學的健康知識傳遞給身邊的同學與親友。',
         'question7' => '我會想主動學習更多相關健康知識。',
     ];
+    public function mount(){
+        $client = ClientBuilder::create()->build();
+    }
     #[On('export')]
     public function export()
     {

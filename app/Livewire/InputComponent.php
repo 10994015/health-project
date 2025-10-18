@@ -57,13 +57,12 @@ class InputComponent extends Component
         ]);
         DB::beginTransaction();
         try {
-            if (Giveback::where('signed_url', $this->signedurl)->lockForUpdate()->exists()) {
+            if (Giveback::where('signed_url', $this->signedurl)->exists()) {
                 $this->dispatch('error-alert-commited', ['message' => '該局已經提交過，若要重複提交，請返回首頁並重新開始遊戲。']);
                 DB::rollBack();
                 return;
             }
             $game_record = GameRecord::where('student_id', $this->student_id)
-                ->lockForUpdate()
                 ->first();
 
             if (!$game_record) {

@@ -42,4 +42,4 @@ Route::middleware([
 });
 
 
-URL::forceScheme('https');
+// URL::forceScheme('https');
