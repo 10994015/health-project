@@ -19,16 +19,6 @@ class DatabaseSeeder extends Seeder
             'id' => 1,
             'count' => 0,
         ]);
-
-        // 新增管理者帳號
-        \App\Models\User::create([
-            'name' => 'ADMIN',
-            'email' => 'admin@cycuhealth.com',
-            'username'=> 'admin',
-            'password' => bcrypt('admin123'),
-            'email_verified_at' => now(),
-            'remember_token'=> 'sFbxrV4YeNmsnKEch9WpVv1it88tVWLH0SDApGLOtdvocuGmLg3cgKEjX8Ec',
-        ]);
     }
 
 }
