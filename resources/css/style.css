@@ -23,7 +23,7 @@ body {
 .home-component .home .startBtn {
     position: absolute;
     display: block;
-    bottom: 10px;
+    bottom: 50%;
     right: 10px;
     display: flex;
     transform: translateY(-50%);

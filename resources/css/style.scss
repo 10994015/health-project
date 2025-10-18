@@ -19,7 +19,7 @@ body{
         .startBtn{
             position: absolute;
             display: block;
-            bottom: 10px;
+            bottom: 50%;
             right:10px;
             display: flex;
             transform: translateY(-50%);
@@ -28,13 +28,13 @@ body{
             animation: shadow 2s infinite;
             width:90px;
             height: 90px;
-            background-color: #fff;
-            color:#FF564D;
+            background-color: #254274;
+            color:#fff;
             display: flex;
             justify-content: center;
             align-items: center;
             border-radius: 50%;
-            box-shadow:  0px 0px 15px #C42601;
+            box-shadow:  0px 0px 15px #13223d;
             text-decoration: none;
             text-align: center;
             line-height: 90px;

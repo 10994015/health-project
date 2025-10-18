@@ -11,7 +11,7 @@ class CommentsExport implements FromArray, WithHeadings
     public function array(): array
     {
         $questions = [
-            'question1' => '瞭解運動對身體的好處及重要性，願意培養運動習慣。',
+            'question1' => '對於永續飲食概念有更進一步瞭解，願意於生活中實踐。',
             'question2' => '瞭解含糖飲料對身體的負面影響及多喝白開水的益處。',
             'question3' => '飲料紅黃綠燈有助於選擇飲品的判斷。',
             'question4' => '我會願意於生活中實踐視力保健及口腔護理。',

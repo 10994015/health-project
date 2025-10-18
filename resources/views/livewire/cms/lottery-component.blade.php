@@ -71,7 +71,7 @@ x-on:refresh-students.window="refreshStudents($event.detail)"
     <div class="px-4 py-8 mx-auto bg-white max-w-7xl">
         <div class="p-6 bg-white rounded-lg shadow-lg">
             <div class="mb-8 text-center">
-                <h2 class="text-2xl font-bold text-red-400">113年健康體育週 團體衛教講座</h2>
+                <h2 class="text-2xl font-bold text-red-400">114年健康體育週 團體衛教講座</h2>
             </div>
 
             <div class="lottery-block">

@@ -29,7 +29,7 @@ x-on:error-alert-commited.window="errorCommitedAlert($event.detail)"
                 @error('score') <span class="error-message">{{ $message }}</span> @enderror
                 <p style="text-align:center;font-size:18px;font-weight: 600;margin-top:10px">您覺得本次活動學習到?(可複選)</p>
                 <label for="q1">
-                    <input type="checkbox" id="q1" name="q1" wire:model.live='q1' class="study">瞭解運動對身體的好處及重要性，願意培養運動習慣。
+                    <input type="checkbox" id="q1" name="q1" wire:model.live='q1' class="study">對於永續飲食概念有更進一步瞭解，願意於生活中實踐。
                 </label>
                 <label for="q2">
                     <input type="checkbox" id="q2" name="q2" wire:model.live='q2' class="study">瞭解含糖飲料對身體的負面影響及多喝白開水的益處。

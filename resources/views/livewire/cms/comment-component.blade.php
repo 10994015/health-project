@@ -8,7 +8,7 @@
     <div class="px-4 py-8 mx-auto max-w-7xl">
         <div class="p-6 bg-white rounded-lg shadow-lg">
             <div class="mb-8 text-center">
-                <h2 class="text-2xl font-bold text-red-400">113年健康體育週 團體衛教講座</h2>
+                <h2 class="text-2xl font-bold text-red-400">114年健康體育週 團體衛教講座</h2>
             </div>
 
             <div class="space-y-6">
@@ -44,7 +44,7 @@
                                 <th class="w-2/3 px-4 py-3 text-sm font-medium text-gray-900 bg-gray-50">
                                     <div class="flex items-center">
                                         <span class="flex items-center justify-center w-5 h-5 mr-2 text-xs font-bold text-blue-600 bg-blue-100 rounded-full">1</span>
-                                        瞭解運動對身體的好處及重要性，願意培養運動習慣。
+                                        對於永續飲食概念有更進一步瞭解，願意於生活中實踐。
                                     </div>
                                 </th>
                                 <td class="px-4 py-3 text-sm text-gray-800 whitespace-nowrap">
