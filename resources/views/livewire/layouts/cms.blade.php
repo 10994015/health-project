@@ -53,7 +53,7 @@
         <div class="px-4 py-8 mx-auto max-w-7xl">
             <div class="flex flex-col items-center justify-center space-y-4">
                 <div class="text-center">
-                    <p class="text-sm text-gray-600">© 2024 健康體育週 團體衛教講座</p>
+                    <p class="text-sm text-gray-600">© 2025 健康體育週 團體衛教講座</p>
                 </div>
             </div>
         </div>

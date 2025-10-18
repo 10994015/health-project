@@ -13,8 +13,8 @@
     },
     checkDateInRange() {
         const today = new Date();
-        const startDate = new Date('2024-12-02');
-        const endDate = new Date('2024-12-06');
+        const startDate = new Date('2025-11-10');
+        const endDate = new Date('2025-11-14');
 
         // 判斷今天是否在範圍內（包含起始與結束日期）
         if (today >= startDate && today <= endDate) {
@@ -394,11 +394,11 @@
                         <div class="flex items-center space-x-3">
                             <select :disabled="renderTimeLoading" x-model="selectedDate" @change="filterTimeData()" :class="[renderTimeLoading ? 'bg-gray-300 cursor-not-allowed' : '' ,'w-32 px-3 py-2 text-sm  border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500']">
                                 <option value="">全部日期</option>
-                                <option value="12/2">2024/12/02</option>
-                                <option value="12/3">2024/12/03</option>
-                                <option value="12/4">2024/12/04</option>
-                                <option value="12/5">2024/12/05</option>
-                                <option value="12/6">2024/12/06</option>
+                                <option value="11/10">2025/11/10</option>
+                                <option value="11/11">2025/11/11</option>
+                                <option value="11/12">2025/11/12</option>
+                                <option value="11/13">2025/11/13</option>
+                                <option value="11/14">2025/11/14</option>
                             </select>
                         </div>
                     </div>
@@ -512,7 +512,7 @@
                 <div class="flex items-center justify-between mb-4">
                     <h3 class="text-lg font-medium text-gray-900">健康體育周資料數量</h3>
                     <div class="flex items-center space-x-2">
-                        <span class="text-sm text-gray-500">2024 12/2 - 12/6</span>
+                        <span class="text-sm text-gray-500">2025 11/10 - 11/14</span>
                         <button class="p-1 text-gray-400 hover:text-gray-600">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>

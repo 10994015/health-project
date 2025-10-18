@@ -30,7 +30,7 @@ class GivebackFactory extends Factory
             'comment' => $this->faker->sentence,
             'score' => $this->faker->numberBetween(1, 5), // score 為 1 到 5 之間的數字
             'game_seconds' => $this->faker->numberBetween(1, 200), // 假設 game_seconds 是 1 到 3600 之間的數字
-            'created_at' => $this->faker->dateTimeBetween('2024-12-02 09:10:00', '2024-12-06 16:50:00'),
+            'created_at' => $this->faker->dateTimeBetween('2025-11-10 08:10:00', '2025-11-14 16:50:00'),
             'updated_at' => now(),
         ];
     }

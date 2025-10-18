@@ -20,7 +20,7 @@ class GameRecordFactory extends Factory
         return [
             'student_id' => $this->faker->unique()->numberBetween(10000000, 99999999),
             'name' => $this->faker->name,
-            'created_at' => $this->faker->dateTimeBetween('2024-12-02 09:10:00', '2024-12-06 16:50:00'),
+            'created_at' => $this->faker->dateTimeBetween('2025-11-10 08:10:00', '2025-11-14 16:50:00'),
             'updated_at' => now(),
         ];
     }
