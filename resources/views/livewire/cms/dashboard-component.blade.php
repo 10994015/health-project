@@ -274,7 +274,7 @@
         <div class="flex items-center justify-between p-6 bg-white rounded-lg shadow-sm">
             <div>
                 <h1 class="text-2xl font-bold text-gray-900">健康體育週儀表板</h1>
-                <p class="mt-1 text-sm text-gray-500">113年度衛教講座統計分析</p>
+                <p class="mt-1 text-sm text-gray-500">114年度衛教講座統計分析</p>
             </div>
             <div class="flex space-x-4">
                 <a href="{{ route('cms.lottery') }}"

@@ -60,7 +60,7 @@ class FeedbackComponent extends Component
                     ->orWhere('student_id', 'like', '%'.$this->search.'%');
             });
         }
-        $query->select('id', 'game_record_id', 'student_id',  'score', 'comment', 'question_1', 'question_2', 'question_3', 'question_4', 'question_5', 'question_6', 'question_7');
+        $query->select('id', 'game_record_id', 'student_id',  'score', 'comment', 'question_1', 'question_2', 'question_3', 'question_4', 'question_5', 'question_6', 'question_7', 'created_at');
         Log::info('SQL Query: ' . $query->toSql());
         Log::info('Query Bindings: ', $query->getBindings());
         if(!empty($this->limit)){
@@ -68,7 +68,6 @@ class FeedbackComponent extends Component
         }else{
             $students = $query->get();
         }
-        Log::info($students->toArray());
         return view('livewire.cms.feedback-component', compact('students'));
     }
 }
